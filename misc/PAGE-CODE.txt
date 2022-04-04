@@ -1,0 +1,74 @@
+for signup:
+
+<?php
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyinput") {
+            echo '<p>Fill in all fields</p>';
+        }
+        else if ($_GET["error"] == "invaliduid") {
+            echo '<p>Invalid username</p>';
+        }
+        else if ($_GET["error"] == "invalidemail") {
+            echo '<p>Invalid email</p>';
+        }
+        else if ($_GET["error"] == "differentpasswords") {
+            echo '<p>Passwords does not match</p>';
+        }
+        else if ($_GET["error"] == "stmtfailed") {
+            echo '<p>Something went wrong</p>';
+        }
+        else if ($_GET["error"] == "usernametaken") {
+            echo '<p>Username or email is already taken</p>';
+        }
+        else if ($_GET["error"] == "none") {
+            echo '<p>You have signed up</p>';
+        }
+    }
+?>
+
+
+for login:
+
+<?php
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyinput") {
+            echo '<p>Fill in all fields</p>';
+        }
+        else if ($_GET["error"] == "wronglogin") {
+            echo '<p>Invalid input</p>';
+        }
+    }
+?>
+
+
+for header (any page):
+
+<?php
+    if (isset($_SESSION["useruid"])) {
+        echo '<li class="nav_item"><a href="profile.php"><p>Profile</p></a></li>';
+    }
+    else {
+        echo '<li class="nav_item"><a href="signup.php"><p>Sign up</p></a></li>';
+        echo '<li class="nav_item"><a href="login.php"><p>Log in</p></a></li>';
+    }
+?>
+
+for top of website:
+
+<?php
+    session_start();
+?>
+
+
+logout button:
+
+if (isset($_SESSION["useruid])) {
+    echo '<element><a href="includes/logout.inc.php">Log Out</a></element>';
+}
+
+
+if you want an indication of being logged in:
+
+if (isset($_SESSION["useruid])) {
+    echo '<p>Hello there ' . $_SESSION["useruid] . '</p>';
+}
