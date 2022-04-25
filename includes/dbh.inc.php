@@ -2,7 +2,7 @@
 
 $serverName = "localhost";
 $dBUsername = "root";
-$dBPassword = "";
+$dBPassword = "root";
 $dBName = "logsite";
 
 $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
