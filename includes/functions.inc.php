@@ -100,7 +100,7 @@ function loginUser($conn, $username, $pwd) {
     $uidExists = uidExists($conn, $username, $username); //the variable username works for both email and username, which is why it is included twice
 
     if ($uidExists === false) {
-        header("location: ../signup.php?error=wronglogin");
+        header("location: ../login.php?error=wronglogin");
         exit();
     }
 
@@ -108,13 +108,13 @@ function loginUser($conn, $username, $pwd) {
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd === false) {
-        header("location: ../signup.php?error=emptinput");
+        header("location: ../login.php?error=wronglogin");
         exit();
     }
     else if ($checkPwd === true) {
         session_start();
-        $_SESSION["usersid"] = $uidExists["usersId"];
-        $_SESSION["usersuid"] = $uidExists["usersUid"];
+        $_SESSION["userid"] = $uidExists["usersId"];
+        $_SESSION["useruid"] = $uidExists["usersUid"];
         header("location: ../index.php");
         exit();
     }
