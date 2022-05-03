@@ -1,6 +1,6 @@
 <?php include_once 'header.php'; ?>
 
-<section id="login_form">
+<section>
     <div class="section_header"><h2>Log In</h2></div>
     <div class="section_main">
         <form action="includes/login.inc.php" method="post">
