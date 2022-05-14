@@ -50,7 +50,7 @@ section {
 
 h2, h3, h4, .section_header p, .poster_container.final p {
     color: var(--color-secondary);
-    white-space: nowrap; /* gör att texten inte byter rad */
+    white-space: nowrap;
 }
 
 h2 {
@@ -203,7 +203,6 @@ header {
     grid-area: he;
     display: flex;
     justify-content: center;
-    background-image: var(--color-gradient-primary);
 }
 
 nav {
@@ -349,4 +348,18 @@ button p {
 ::placeholder {
     font-family: var(--font-primary);
     color: var(--color-primary-dark);
+}
+
+form + p {
+    color: var(--color-secondary);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    margin-top: var(--gap-primary);
+}
+
+header + h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--gap-secondary);
 }

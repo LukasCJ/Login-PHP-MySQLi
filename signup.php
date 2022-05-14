@@ -3,18 +3,18 @@
 <section>
     <div class="section_header"><h2>Sign Up</h2></div>
     <div class="section_main">
-        <form action="includes/signup.inc.php" method="post">
-            <input type="text" name="name" placeholder="Full Name...">
-            <input type="text" name="email" placeholder="Email..">
-            <input type="text" name="uid" placeholder="Username..">
-            <input type="password" name="pwd" placeholder="Password..">
-            <input type="password" name="pwdrepeat" placeholder="Repeat Password...">
-            <button type="submit" name="submit"><p>Sign Up</p></button>
+        <form action="includes/signup.inc.php" method="post"> <!--"method=post" låter oss använda det som skrivs i fältena-->
+            <input type="text" name="name" placeholder="Full Name..."> <!--input taggar ger oss fält som användaren kan skriva in i, denna är för användarens namn-->
+            <input type="text" name="email" placeholder="Email.."> <!--email-->
+            <input type="text" name="uid" placeholder="Username.."> <!--användarnamn-->
+            <input type="password" name="pwd" placeholder="Password.."> <!--lösenord-->
+            <input type="password" name="pwdrepeat" placeholder="Repeat Password..."> <!--upprepa lösenord (för att se till att användaren inte skrev fel)-->
+            <button type="submit" name="submit"><p>Sign Up</p></button> <!--knapp för att skicka in informationen-->
         </form>
 
         <?php
-            if (isset($_GET["error"])) {
-                if ($_GET["error"] == "emptyinput") {
+            if (isset($_GET["error"])) { //efter att vi kollat efter fel i uppskrivningen så ändras url:en genom en get metod
+                if ($_GET["error"] == "emptyinput") { //baserat på dessa förändringar i url:en så får sidan förändringar i formen meddelanden som säger vad som gick fel
                     echo '<p>Fill in all fields</p>';
                 }
                 else if ($_GET["error"] == "invaliduid") {

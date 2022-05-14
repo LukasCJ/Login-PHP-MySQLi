@@ -1,5 +1,5 @@
-<?php
-    session_start();
+<?php //startar eller fortsätter en session med hjälp av get eller post metod
+    session_start(); //behövs enkelt sagt för att kolla om användaren är inloggad
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
                 <a href="index.php" id="nav_logo"><img src="img/logo.png" alt="website logo"></a>
                 <ul>
                     <?php
-                        if (isset($_SESSION["useruid"])) {
+                        if (isset($_SESSION["useruid"])) { //kollar om 
                             echo '<li class="nav_item"><a href="#"><p>Log</p></a></li>';
                         }
                     ?>
