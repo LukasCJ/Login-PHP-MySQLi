@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 
 <?php
-    if (isset($_SESSION["useruid"])) {
+    if (isset($_SESSION["useruid"])) { //inkluderas bara om en session är igång där använderan har ett aktivt användarnamn, dvs är inloggad
         echo '<h2>Welcome ' . $_SESSION["useruid"] . '</h2>';
         echo '<section>
             <div class="section_header"><h2>Recent Activity</h2><p>From Friends</p></div>

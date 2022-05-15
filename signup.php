@@ -3,7 +3,7 @@
 <section>
     <div class="section_header"><h2>Sign Up</h2></div>
     <div class="section_main">
-        <form action="includes/signup.inc.php" method="post"> <!--"method=post" låter oss använda det som skrivs i fältena-->
+        <form action="includes/signup.inc.php" method="post"> <!--"method="post"" låter oss använda det som skrivs i fältena, "action="includes/signup.inc.php"" säger vart koden finns som ska gå igång efter att submit-knappen tryckts-->
             <input type="text" name="name" placeholder="Full Name..."> <!--input taggar ger oss fält som användaren kan skriva in i, denna är för användarens namn-->
             <input type="text" name="email" placeholder="Email.."> <!--email-->
             <input type="text" name="uid" placeholder="Username.."> <!--användarnamn-->

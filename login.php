@@ -3,7 +3,7 @@
 <section>
     <div class="section_header"><h2>Log In</h2></div>
     <div class="section_main">
-        <form action="includes/login.inc.php" method="post">
+        <form action="includes/login.inc.php" method="post"> <!--samma som signup fast koden där informationen används ligger i "includes/login.inc.php"-->
             <input type="text" name="uid" placeholder="Username/Email...">
             <input type="password" name="pwd" placeholder="Password..">
             <button type="submit" name="submit"><p>Log In</p></button>

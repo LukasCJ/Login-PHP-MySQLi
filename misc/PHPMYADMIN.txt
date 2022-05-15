@@ -1,4 +1,4 @@
-database name: "logsite"
+databas namn: "logsite"
 
 SQL:
 

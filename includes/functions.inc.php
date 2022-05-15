@@ -2,7 +2,7 @@
 
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRe) {
     $result;
-    if (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRe)) {
+    if (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRe)) { //empty() kollar om fältet är tomt
         $result = true;
     } 
     else {
@@ -13,7 +13,7 @@ function emptyInputSignup($name, $email, $username, $pwd, $pwdRe) {
 
 function invalidUid($username) {
     $result;
-    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) { //preg_match() kollar så att de angivna tecken för användarnamnet är tillåtna, i detta fall stor eller liten bokstav i det engelska alfabetet eller siffror
         $result = true;
     } 
     else {
@@ -24,7 +24,7 @@ function invalidUid($username) {
 
 function invalidEmail($email) {
     $result;
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //filter_var() är, med hjälp av "FILTER_VALIDATE_EMAIL" en färdigställd metod för att kolla att emailen ser ut som en riktig email
         $result = true;
     } 
     else {
@@ -35,7 +35,7 @@ function invalidEmail($email) {
 
 function pwdMatch($pwd, $pwdRe) {
     $result;
-    if ($pwd !== $pwdRe) {
+    if ($pwd !== $pwdRe) { //självförklarligt
         $result = true;
     } 
     else {
@@ -45,8 +45,8 @@ function pwdMatch($pwd, $pwdRe) {
 }
 
 function uidExists($conn, $username, $email) {
-    $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;"; //checks whether either username or email are taken; checks wether they already exists in the "users" table
-    $stmt = mysqli_stmt_init($conn); //prevents visitors from damaging the website by writing stuff in the input-fields. explained at 1:10:30 in the video
+    $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;"; //kollar igenom databasens users-table efter likadana användarnamn och email
+    $stmt = mysqli_stmt_init($conn); //kollar så att det besökare skrivit in i fältena inte är kod som kan skada hemsidan. förklaras 1:10:30 i videon
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../signup.php?error=stmtfailed");
         exit();
